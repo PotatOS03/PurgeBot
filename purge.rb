@@ -15,21 +15,14 @@ raw_names = ""
 accepted_names = raw_names.split(',').map(&:downcase)
 
 # EDIT: If someone's "raw name" is spelled in a different way than their GroupMe name or nickname,
-# you can fix it here as long as you know who is who.
-# This often happens if someone doesn't use their full name in GroupMe
-accepted_names.map! do |name|
-  case name
-  when 'raw name'
-    'groupme name'
-  when 'another incorrect raw name'
-    'their groupme name'
-  # Continue the pattern for as many names as you need to fix
-
-  # Make sure this stays at the end:
-  else
-    name
-  end
-end
+# or a member is wrongly removed, you can add their correct name here.
+# This often happens if someone doesn't use their full name in GroupMe.
+# Make sure names are typed in lowercase here
+accepted_names.concat([
+  'correct groupme name',
+  'another groupme name',
+  'etc'
+])
 
 # Print the number of accepted names
 puts "Accepted names: #{accepted_names.length}"

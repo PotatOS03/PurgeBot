@@ -45,10 +45,10 @@ The purge removes members according to a list of who can stay. Anyone currently 
 
 ### Preparing for the purge
 
-- Ensure that the `res = Net::HTTP.post(uri, nil)` line on line 98 is commented (has a # at the beginning)
+- Ensure that the `res = Net::HTTP.post(uri, nil)` line on line 91 is commented (has a # at the beginning)
 - In the terminal, run `ruby purge.rb`
 - Once the code has run, check the report printed in the terminal for any wrongly removed members or other discrepancies
-- If there are wrongly removed members, fix this by editing the `accepted_names.map! do |name|` code block starting at line 20 to include those members' GroupMe names
+- If there are wrongly removed members, fix this by editing the `accepted_names.concat([` code block starting at line 21 to include those members' GroupMe names
 - Keep repeating the previous 3 steps until you are satisfied with the results of the purge
 
 ## Executing the purge
